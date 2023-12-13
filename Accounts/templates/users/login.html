@@ -1,0 +1,120 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+<style type="text/css">
+
+  
+      
+        #text {
+    
+            height: 25px;
+            border-radius: 5px;
+            padding: 4px;
+            border: solid thin #aaa;
+            width: 300px;
+            height: 33px;
+            border-radius: 10px;
+            margin-left: 42px;
+            margin-bottom: 30px;
+            
+        }
+    
+        #button {
+    
+            padding: 10px;
+            width: 100px;
+            color: white;
+            background-color:coral;
+            border: 1px solid #eee;
+            width: 140px;
+            height: 60px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin-left: 120px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #button:hover{
+            color: black;
+            background-color: aquamarine ;
+            cursor: pointer;
+        }
+    
+        #box {
+    
+            background-color: aqua;
+            margin: auto;
+            width: 400px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            margin-top: 10%;
+            height: 450px;
+    
+    
+        }
+        #body{
+            background-color: #eee;
+        }
+        #nav{
+            background-color: grey;
+            height: 80px;
+            margin-top: 0;
+
+        }
+        #ul{
+            display: flex;
+            margin: 20px;
+            margin-left: 55%;
+        }
+        #li {
+            margin: 20px;
+            list-style: none;
+            font-size: 25px;
+            color: black;
+
+        
+        }
+        #a {
+            color: black;
+            text-decoration: none;
+            border: 1px solid #aaa;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        #a:hover{
+            background-color: aqua;
+            font-size: 20px;
+            color: white;
+        }
+        
+        #ai:hover{
+            color: white;
+
+         }
+    
+    </style>
+
+<div id="box">
+
+    <form method="POST" action="" id="form">
+        {% csrf_token %}
+        <div style="font-size: 30px;margin: 10px;color: black;text-align: center;margin-bottom: 70px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif; ">Login</div>
+        <div>
+        <label>Email </label>
+        <input id="text" type="email" name="email"><br><br>
+         </div>
+
+         <div>
+        <label>Password</label>
+        <input id="text" type="password" name="password"><br><br>
+       </div>
+        <input id="button" type="submit" value="Login"><br><br>
+
+    </form>
+</div>
+  
+{% endblock %}

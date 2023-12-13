@@ -1,0 +1,103 @@
+
+{% extends 'home.html' %}
+
+{% block content %}
+<style>
+.img{
+  background: url('https://play-lh.googleusercontent.com/O94_n_hnCMx_8C4TzqmgVX8qjJWQmZ8LVajJ1He1Id78mosl_UInhu_Y6Fu7MM_vVA')no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.img::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.center{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+.center .title{
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.center .sub_title{
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+.center .btns{
+  margin-top: 20px;
+}
+.center .btns button{
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.center .btns button:first-child{
+  color: #fff;
+  background: none;
+}
+.btns button:first-child:hover{
+  background: white;
+  color: black;
+}
+.center .btns button:last-child{
+  background: white;
+  color: black;
+}
+
+
+</style>
+
+
+
+
+<div class="img"></div>
+<div class="center">
+
+  <div class="title">Receipt Tracker</div>
+  <div class="sub_title">receipt information </div>
+  <div class="btns">
+    
+    {% if request.user.is_authenticated  %}
+
+    <a href="{% url 'receipt-list' %}"><button>Receipt List</button> </a> 
+
+   <a href="{% url 'logout' %}"><button>Logout</button> </a> 
+
+   {% else %}
+
+   <a href="{% url 'register' %}"><button>Register</button></a>
+
+   <a href="{% url 'login-page' %}"><button>Login</button> </a> 
+
+   
+   {% endif %}
+
+
+  </div>
+
+</div>
+
+{% endblock %}

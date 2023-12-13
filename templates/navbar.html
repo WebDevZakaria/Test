@@ -1,0 +1,15 @@
+<header class="header">
+    <div class="container container--narrow">
+      <nav class="header__nav">
+        <ul style="display: flex;">
+          {% if request.user.is_authenticated  %}
+          <li class="header__menuItem"><a href="{% url 'receipt-list' %}" class="btn btn--sub" style="color: black;font-size: 18px;font-weight: bold;font-family: sans-serif;margin-right:20px ;list-style: none;">Receipt information</a></li>
+          <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub" style="color: black;font-size: 18px;font-weight: bold;font-family: sans-serif">Logout</a></li>
+          {% else %}
+          <li class="header__menuItem"><a href="" class="btn btn--sub" style="color: black;font-size: 18px;font-weight: bold;font-family: sans-serif">log in</a></li>      
+             {% endif %}
+
+        </ul>
+      </nav>
+    </div>
+  </header>
