@@ -1,18 +1,15 @@
 from django.urls import path
 
-from Receipt.views import list_view as listviews
-from Receipt.views import form_view as formviews
-from Receipt.views import detail_view as detailviews
-
+from Receipt.views import list_view,form_view,detail_view
 
 urlpatterns = [
 
-    path('', listviews.homepage, name='home-page'),
-    path('listofrecipt/', listviews.listofReceipt, name='receipt-list'),
-    path('showdetail/<str:pk>', detailviews.showreceiptdetail, name='show-receipt'),
+    path('', list_view.homepage, name='home-page'),
+    path('listofrecipt/', list_view.listofReceipt, name='receipt-list'),
+    path('delete/<str:pk>', form_view.deletereceipt, name='delete-receipt'),
+    path('createreceipt/', form_view.createreceipt, name='create-receipt'),
+    path('updatereceipt/<str:pk>', form_view.updatereceipt, name='update-receipt'),
+    path('showdetail/<str:pk>', detail_view.showreceiptdetail, name='show-receipt'),
 
-    path('delete/<str:pk>', formviews.deletereceipt, name='delete-receipt'),
-    path('createreceipt/', formviews.createreceipt, name='create-receipt'),
-    path('updatereceipt/<str:pk>', formviews.updatereceipt, name='update-receipt'),
-       
+
 ]
