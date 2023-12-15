@@ -5,13 +5,15 @@ Setup
 
 first thing to do is to clone repository :
 
-   git clone https://github.com/WebDevZakaria/Test.git 
-   cd Test
+         git clone https://github.com/WebDevZakaria/Test.git 
+         
+         cd Test
 
 
 Create a virtual environment to install dependencies in and activate it:
 
          virtualenv venv
+         
          venv\Scripts\activate
 
 Then install the dependencies:
