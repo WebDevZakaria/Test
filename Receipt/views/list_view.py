@@ -7,10 +7,9 @@ from ..models import Receipt
 #the home page function 
 def homepage(request):
 
-
     return render(request,'receiptinfomation/index.html')
 
-# list of the user receipt  function
+# list of the receipt of a particular user function
 def listofReceipt(request):
 
     receipt = Receipt.objects.filter(owner = request.user)   # select the list of receipt  that have the log in user
