@@ -1,5 +1,8 @@
 Test Receipt Application
+
 Setup
+
+
 first this to do is to clone repository :
 
    git clone https://github.com/WebDevZakaria/Test.git 
@@ -13,7 +16,7 @@ Create a virtual environment to install dependencies in and activate it:
 
 Then install the dependencies:
 
-  (venv)  pip install -r requirements.txt
+        (venv)  pip install -r requirements.txt
 
 Note the (venv) should be  in the front of the prompt. this indicate that the terminal session is in a virtual env
 
