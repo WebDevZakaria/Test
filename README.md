@@ -3,7 +3,7 @@ Test Receipt Application
 Setup
 
 
-first this to do is to clone repository :
+first thing to do is to clone repository :
 
    git clone https://github.com/WebDevZakaria/Test.git 
    cd Test
