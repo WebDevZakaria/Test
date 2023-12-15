@@ -5,6 +5,8 @@ from ..models import Receipt
 
 from ..forms import ReceiptForm
 
+
+#delete receipt function
 def deletereceipt(request, pk):
 
     receipt = Receipt.objects.get(id=pk)
@@ -14,7 +16,7 @@ def deletereceipt(request, pk):
     return redirect('receipt-list')
 
 
-
+#create receipt fonction 
 def createreceipt(request):
 
     receiptform = ReceiptForm()
@@ -25,8 +27,8 @@ def createreceipt(request):
 
         if receiptform.is_valid():
 
-            receiptforms = receiptform.save(commit=False)
-
+            receiptforms = receiptform.save(commit=False) # use commit to make changes to the form data or perform additional logic before saving it to the database
+            
             receiptforms.owner = request.user
 
             receiptforms.save()
@@ -39,10 +41,11 @@ def createreceipt(request):
     return render(request, 'receiptinfomation/createreceipt.html',context)
 
 
-
+#update the receipt fonction
 def updatereceipt(request,pk):
 
     receipt = Receipt.objects.get(id=pk)
+
     receiptform = ReceiptForm(instance=receipt)
     
     if request.method == "POST" :
@@ -53,7 +56,7 @@ def updatereceipt(request,pk):
 
             receiptforms = receiptform.save(commit=False)
 
-            receiptforms.dateofpurchase = datetime.now() 
+            receiptforms.dateofpurchase = datetime.now()   # we use datetime to update date of purchase to the current datetime you submit the updated form 
 
             receiptforms.save()
 
@@ -62,6 +65,7 @@ def updatereceipt(request,pk):
     context = {'receiptform':receiptform,"receipt":receipt}
 
     return render(request, 'receiptinfomation/updatereceipt.html',context)
+
 
 
 
