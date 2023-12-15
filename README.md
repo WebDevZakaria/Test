@@ -29,6 +29,7 @@ Once downloading the dependencies  has finished  you can start the server by run
 
 And go to your browser and navigate to http://127.0.0.1:8000.
 
+
 To run the view test run this command in your terminal:
     
      python manage.py test Receipt.tests.receipt.test_view
