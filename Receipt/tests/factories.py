@@ -25,7 +25,6 @@ class ReceiptFactory(factory.django.DjangoModelFactory):
     class Meta: 
         model = Receipt
 
-
     owner = factory.SubFactory(UserFactory)
     storename = "X"    
     itemlist = "X"
